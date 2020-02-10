@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  location: MyString
+  distance: 1
+  elevation: 1
+  difficulty: MyString
+
+two:
+  location: MyString
+  distance: 1
+  elevation: 1
+  difficulty: MyString
