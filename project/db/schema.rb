@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_02_10_204014) do
+ActiveRecord::Schema.define(version: 2020_02_10_212355) do
 
   create_table "hikes", force: :cascade do |t|
     t.string "location"
@@ -23,12 +23,12 @@ ActiveRecord::Schema.define(version: 2020_02_10_204014) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
-    t.integer "user_id_id", null: false
-    t.integer "hike_id_id", null: false
+    t.integer "user_id", null: false
+    t.integer "hike_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.index ["hike_id_id"], name: "index_reviews_on_hike_id_id"
-    t.index ["user_id_id"], name: "index_reviews_on_user_id_id"
+    t.index ["hike_id"], name: "index_reviews_on_hike_id"
+    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -39,6 +39,6 @@ ActiveRecord::Schema.define(version: 2020_02_10_204014) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
-  add_foreign_key "reviews", "hike_ids"
-  add_foreign_key "reviews", "user_ids"
+  add_foreign_key "reviews", "hikes"
+  add_foreign_key "reviews", "users"
 end

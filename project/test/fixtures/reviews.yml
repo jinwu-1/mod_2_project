@@ -2,10 +2,10 @@
 
 one:
   rating: 1
-  user_id: one
-  hike_id: one
+  user: one
+  hike: one
 
 two:
   rating: 1
-  user_id: two
-  hike_id: two
+  user: two
+  hike: two
