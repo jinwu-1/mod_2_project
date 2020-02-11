@@ -12,4 +12,29 @@ Reviews:
     <% end %>
 </ul>
 
-<%= button_to 'Create', new_review_path, method: "get" %>
+
+<hr>
+
+<ul>
+<% if flash[:errors] %>
+    <h3> List of Error(s) </h3>
+    <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+<% end %>
+</ul>
+
+<h3> Create a Review </h3>
+<%= form_for @review do |f| %>
+
+    <%= f.hidden_field :user_id %><br>
+    <%= f.label :hike_id %><br>
+    <%= f.collection_select :hike_id, @hikes, :id, :name %><br><br>
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %><br><br>
+    <%= f.label :description %><br>
+    <%= f.text_area :description, cols: 75, rows: 10 %><br><br>
+
+    <%= f.submit %>
+
+<% end %>
