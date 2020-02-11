@@ -10,6 +10,11 @@
   </head>
 
   <body>
+    <nav>
+      <%= button_to User, users_path, :method => "get" %> <br>
+      <%= button_to Hike, hikes_path, :method => "get" %> 
+      <hr>
+    </nav
     <%= yield %>
   </body>
 </html>
