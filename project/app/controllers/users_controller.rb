@@ -1,16 +1,11 @@
 class UsersController < ApplicationController
 
-    def show
-        @user = find_me
+    def index
+        @users = User.all
     end
 
-
-
-
-    private
-
-    def find_me
-        User.find(params[:id])
+    def show
+        @user = User.find(params[:id])
     end
 
 end

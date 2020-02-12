@@ -11,14 +11,20 @@
         font-family: 'Open Sans', sans-serif;
          text-align: center;
          font-size: 25px;
-         
+    }
+
+    li:link {
+        color: pink; 
+    }
+
     }
 </style>
 
-<h1> Locations in New York </h1>
+<h1>All Users</h1>
 
 <ul>
-    <% @hikes.each do |i| %>
-        <li><%= link_to i.location, hike_path(i) %></li>
+    <% @users.each do |i| %>
+        <li><%= link_to i.name, user_path(i) %></li>
     <% end %>
 </ul>
+

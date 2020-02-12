@@ -19,11 +19,13 @@ end
 location = ["Greenport", "Cold Spring", "Kingston", "Hudson", "Catskill"]
 difficulty = ["Easy", "Moderate", "Hard", "Hell"]
 
-5.times do 
-    Hike.create(location: location.sample, distance: Faker::Number.within(range: 1.0..10.0).to_f, elevation: Faker::Number.within(range: 1.0..5.0).to_f, difficulty: difficulty.sample)
-end
+Hike.create(name: "Greenport Trail" ,location: location[0], distance: 5.4, elevation: 500, difficulty: "Hard")
+Hike.create(name: "Cold Spring Park",location: location[1], distance: 10.2, elevation: 50 , difficulty: "Moderate")
+Hike.create(name: "Kingston Trail",location: location[2], distance: 3.5 , elevation: 50, difficulty: "Easy")
+Hike.create(name: "Hudson Valley Park",location: location[3], distance: 7.2, elevation: 124 , difficulty: "Moderate")
+Hike.create(name: "Catskill Hike",location: location[4], distance: 12, elevation: 1000, difficulty: "Hell")
 
 rating = (1..5).to_a
 5.times do
-    Review.create(rating: rating.sample, user_id: User.all.sample.id, hike_id: Hike.all.sample.id)
+    Review.create(description: Faker::Hipster.sentence, rating: rating.sample, user_id: User.all.sample.id, hike_id: Hike.all.sample.id)
 end

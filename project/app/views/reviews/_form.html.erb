@@ -1,0 +1,10 @@
+<%= form_for @review do |f| %>
+
+    <%= f.label :hike_id %><br>
+    <%= f.collection_select :hike_id, @hikes, :id, :name %><br><br>
+    <%= f.label :description %><br>
+    <%= f.text_field :description %><br><br>
+    
+    <%= f.submit %>
+
+<% end %>

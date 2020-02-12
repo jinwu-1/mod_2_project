@@ -1,0 +1,9 @@
+<h1> Review for <%= @review.hike.name %> </h1><br>
+By: <%= @review.user.name %>
+
+<p>
+Rating: <br><%= @review.rating %><br>
+Content: <br><%= @review.description %><br>
+</p>
+
+<%= button_to 'Back', user_path(@review.user), method: "get" %>

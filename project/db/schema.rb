@@ -13,6 +13,7 @@
 ActiveRecord::Schema.define(version: 2020_02_10_212355) do
 
   create_table "hikes", force: :cascade do |t|
+    t.string "name"
     t.string "location"
     t.integer "distance"
     t.integer "elevation"
@@ -23,6 +24,7 @@ ActiveRecord::Schema.define(version: 2020_02_10_212355) do
 
   create_table "reviews", force: :cascade do |t|
     t.integer "rating"
+    t.string "description"
     t.integer "user_id", null: false
     t.integer "hike_id", null: false
     t.datetime "created_at", precision: 6, null: false
