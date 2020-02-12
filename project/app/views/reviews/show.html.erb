@@ -5,7 +5,7 @@
 <hr>
 </nav
 
-<div><h2> Review for <%= @review.hike.name %> </h2></div>
+<div><h2> Review for <%=link_to @review.hike.name, hike_path(@review.hike) %> </h2></div>
 <div><h3> By: <%=link_to @review.user.name, user_path(@review.user) %> </h3></div>
 
 <div>
