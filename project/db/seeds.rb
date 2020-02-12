@@ -9,11 +9,14 @@ require 'faker'
 User.destroy_all
 Hike.destroy_all
 
-age = (18..35).to_a
+age = (18..99).to_a
 
-5.times do
-    User.create(name: Faker::Name.name, age: age.sample, bio: Faker::Hipster.sentence)
-end
+
+User.create(name: Faker::Name.name, age: age.sample, bio: Faker::Hipster.sentence, username: "user1", password: "asdf")
+User.create(name: Faker::Name.name, age: age.sample, bio: Faker::Hipster.sentence, username: "user2", password: "asdf")
+User.create(name: Faker::Name.name, age: age.sample, bio: Faker::Hipster.sentence, username: "user3", password: "asdf")
+User.create(name: Faker::Name.name, age: age.sample, bio: Faker::Hipster.sentence, username: "user4", password: "asdf")
+User.create(name: Faker::Name.name, age: age.sample, bio: Faker::Hipster.sentence, username: "user5", password: "asdf")
 
 Hike.create(name: "Greenport Trail", distance: 5.4, elevation: 500, difficulty: "Hard")
 Hike.create(name: "Cold Spring Park", distance: 10.2, elevation: 50 , difficulty: "Moderate")
@@ -25,3 +28,5 @@ rating = (1..5).to_a
 5.times do
     Review.create(description: Faker::Hipster.sentence, rating: rating.sample, user_id: User.all.sample.id, hike_id: Hike.all.sample.id)
 end
+
+puts "All done!"

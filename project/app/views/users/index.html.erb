@@ -1,4 +1,11 @@
-<h1> All Users </h1>
+<nav>
+<%= button_to 'Home', '/', :method => "get" %><br>
+<%= button_to User, users_path, :method => "get" %> <br>
+<%= button_to Hike, hikes_path, :method => "get" %> 
+<hr>
+</nav
+
+<div><h2> All Users </h2><div>
 
 <ul>
     <% @users.each do |i| %>

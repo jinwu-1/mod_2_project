@@ -1,22 +1,25 @@
-<h1></h1>
+<nav>
+<%= button_to 'Home', '/', :method => "get" %><br>
+<%= button_to User, users_path, :method => "get" %> <br>
+<%= button_to Hike, hikes_path, :method => "get" %> 
+<hr>
+</nav
 
-<h3> <%= @hike.name %> </h3>
+<div><h2> <%= @hike.name %> </h2></div>
 
-<p>
-
+<div>
 Distance: <%= @hike.distance %> miles <br>
-
 Elevation: <%= @hike.elevation %> meters <br>
+Difficulty: <%= @hike.difficulty %> <br><br>
+</div>
+<hr>
 
-Difficulty: <%= @hike.difficulty %> <br>
-
-</p>
-
-
-<h3> List of Reviews </h3>
+<div><h3> List of Reviews: <h3></div>
 <% @hike.reviews.each do |review| %>
-    User: <%= link_to review.user.name, user_path(review.user) %><br><br>
-    Rating: <%= review.rating %><br><br>
-    Description: <br><%= review.description %><br><br>
+    <div> Author: <%= link_to review.user.name, user_path(review.user) %> </div><br>
+    <div> Rating: <%= review.rating %>/5 </div><br>
+    <div> Description: <br><%= review.description %> </div>
     <hr>
 <% end %>
+
+<br><div><%= button_to 'Back', hikes_path, method: :get %></div>

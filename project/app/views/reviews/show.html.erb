@@ -1,14 +1,25 @@
-<h1> Review for <%= @review.hike.name %> </h1><br>
-By: <%= @review.user.name %>
+<nav>
+<%= button_to 'Home', '/', :method => "get" %><br>
+<%= button_to User, users_path, :method => "get" %> <br>
+<%= button_to Hike, hikes_path, :method => "get" %> 
+<hr>
+</nav
 
-<p>
-Rating: <br><%= @review.rating %><br><br>
-Content: <br><%= @review.description %><br>
-</p>
+<div><h2> Review for <%= @review.hike.name %> </h2></div>
+<div><h3> By: <%=link_to @review.user.name, user_path(@review.user) %> </h3></div>
 
+<div>
+Rating: <%= @review.rating %>/5<br><br>
+Content: <br><%= @review.description %><br><br>
+</div>
+
+<div>
 
 <%= button_to 'Edit', edit_review_path, method: :get %>
 <br>
 <%= button_to 'Delete', review_path(@review), method: :delete, data: { confirm: 'Are you sure?' } %>
 <br>
+
+
 <%= button_to 'Back', user_path(@review.user), method: :get %>
+</div>

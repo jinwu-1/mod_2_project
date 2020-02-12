@@ -1,4 +1,11 @@
-<h1> List of All Hikes </h1>
+<nav>
+<%= button_to 'Home', '/', :method => "get" %><br>
+<%= button_to User, users_path, :method => "get" %> <br>
+<%= button_to Hike, hikes_path, :method => "get" %> 
+<hr>
+</nav
+
+<div><h2> List of All Hikes </h2></div>
 
 <ul>
     <% @hikes.each do |i| %>
