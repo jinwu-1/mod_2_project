@@ -6,7 +6,7 @@ class Review < ApplicationRecord
   validate :rating_range
   
   def rating_range
-    if !rating || (rating < 0 || rating > 5)
+    if !rating || (rating < 1 || rating > 5)
       errors.add(:rating, "need to be between 1-5")
     end
   end

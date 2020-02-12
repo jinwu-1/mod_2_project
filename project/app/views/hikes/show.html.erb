@@ -13,6 +13,15 @@
          font-size: 25px;
     }
 
+    #desc {
+        background-color: lightgrey;
+        width: 1000px;
+        border: 5px solid black;
+        padding: 50px;
+        margin-right: 200px;
+        margin-left: 220px;
+    }
+
 </style>
 
 <div><h1> <%= @hike.name %> </h1></div>
@@ -24,12 +33,11 @@ Difficulty: <%= @hike.difficulty %> <br><br>
 </div>
 <hr>
 
-<div><h3> List of Reviews: <h3></div>
+<div><h2> List of Reviews: <h2></div><br>
 <% @hike.reviews.each do |review| %>
     <div> Author: <%= link_to review.user.name, user_path(review.user) %> </div><br>
     <div> Rating: <%= review.rating %>/5 </div><br>
-    <div> Description: <br><%= review.description %> </div>
-    <hr>
+    <div> Description: </div><br><div id="desc"> <%= review.description %> </div><br>
 <% end %>
 
 <br><div><%= button_to 'Back', hikes_path, method: :get %></div>

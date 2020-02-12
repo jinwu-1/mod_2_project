@@ -13,20 +13,27 @@
          font-size: 25px;
     }
 
+    #desc {
+        background-color: lightgrey;
+        width: 1000px;
+        border: 5px solid black;
+        padding: 50px;
+        margin-right: 200px;
+        margin-left: 220px;
+    }
+
 </style>
 
 <div><h1> Edit Review </h1></div>
 
 <div>
-<ul>
 <% if flash[:errors] %>
-    <div> List of Error(s) </div>
+    <div> List of Error(s): </div>
     <% flash[:errors].each do |error| %>
-        <li><%= error %></li>
+        <div><%= error %></div>
     <% end %>
-    <br>
 <% end %>
-</ul>
+
 
 <%= form_for @review do |f| %>
 
@@ -36,11 +43,11 @@
     <%= f.label :rating %>: (1 to 5)<br>
     <%= f.number_field :rating %><br><br>
     <%= f.label :description %>:<br>
-    <%= f.text_area :description, cols: 75, rows: 10 %><br><br>
+    <%= f.text_area :description, cols: 50, rows: 5.5 %><br><br>
 
     <%= f.submit %>
 
 <% end %>
 
-<br><%= button_to 'Back', review_path(@review), method: :get %>
+<%= button_to 'Back', review_path(@review), method: :get %>
 </div>

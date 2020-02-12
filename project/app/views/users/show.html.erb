@@ -18,30 +18,30 @@
 <h1> <%= @user.username %>'s Profile </h1>
 
 <div>
-<ul>
-    <li>Name: <%= @user.name %></li><br>
-    <li>Age: <%= @user.age %> </li><br>
-    <li>Bio: <%= @user.bio %> </li><br>
-</ul>
+<div>
+    <div>Name: <%= @user.name %></div><br>
+    <div>Age: <%= @user.age %> </div><br>
+    <div>Bio: <%= @user.bio %> </div><br>
+</div>
 <hr>
 
 <h3> Reviews: </h3>
-<ul>
+<div>
     <% @user.reviews.each do |i| %>
-        <li><%= link_to i.hike.name, review_path(i) %></li>
+        <div><%= link_to i.hike.name, review_path(i) %></div>
     <% end %>
-</ul>
+</div>
 <hr>
 
 
-<ul>
+<div>
 <% if flash[:errors] %>
     <h3> List of Error(s) </h3>
     <% flash[:errors].each do |error| %>
-        <li><%= error %></li>
+        <div><%= error %></div>
     <% end %>
 <% end %>
-</ul>
+</div>
 
 <h3> Create a Review </h3>
 <%= form_for @review do |f| %>
