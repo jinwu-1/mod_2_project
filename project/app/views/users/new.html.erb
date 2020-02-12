@@ -13,15 +13,15 @@
 
 <%= form_for @user do |f| %>
 
-    <%= f.label :username %><br>
+    <%= f.label :username %>:<br>
     <%= f.text_field :username %><br><br>
-    <%= f.label :password %><br>
+    <%= f.label :password %>:<br>
     <%= f.password_field :password %><br><br>
-    <%= f.label :name %><br>
+    <%= f.label :name %>:<br>
     <%= f.text_field :name %><br><br>
-    <%= f.label :age %><br>
+    <%= f.label :age %>:<br>
     <%= f.number_field :age %><br><br>
-    <%= f.label :bio %><br>
+    <%= f.label :bio %>:<br>
     <%= f.text_area :bio, cols: 75, rows: 10 %><br><br>
 
     <%= f.submit %>
