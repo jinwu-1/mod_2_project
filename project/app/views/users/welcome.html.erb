@@ -1,11 +1,8 @@
-<nav>
-<%= button_to User, users_path, :method => "get" %> <br>
-<%= button_to Hike, hikes_path, :method => "get" %> 
-<hr>
-</nav
-
 <div><h1>Welcome to ASDF!</h1></div>
 
 <div><%= link_to 'Sign Up', new_user_path, method: :get %></div><br>
 
-Login Link
+Login Link 
+
+<br><br><%= button_to 'Show Users', users_path, :method => "get" %> <br>
+<%= button_to 'All Hikes', hikes_path, :method => "get" %> 
