@@ -1,4 +1,6 @@
-<h1> <%= @hike.location %> </h1>
+<h1></h1>
+
+<h3> <%= @hike.name %> </h3>
 
 <p>
 
@@ -9,3 +11,12 @@ Elevation: <%= @hike.elevation %> meters <br>
 Difficulty: <%= @hike.difficulty %> <br>
 
 </p>
+
+
+<h3> List of Reviews </h3>
+<% @hike.reviews.each do |review| %>
+    User: <%= link_to review.user.name, user_path(review.user) %><br><br>
+    Rating: <%= review.rating %><br><br>
+    Description: <br><%= review.description %><br><br>
+    <hr>
+<% end %>

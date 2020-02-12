@@ -2,8 +2,13 @@
 By: <%= @review.user.name %>
 
 <p>
-Rating: <br><%= @review.rating %><br>
+Rating: <br><%= @review.rating %><br><br>
 Content: <br><%= @review.description %><br>
 </p>
 
-<%= button_to 'Back', user_path(@review.user), method: "get" %>
+
+<%= button_to 'Edit', edit_review_path, method: :get %>
+<br>
+<%= button_to 'Delete', review_path(@review), method: :delete, data: { confirm: 'Are you sure?' } %>
+<br>
+<%= button_to 'Back', user_path(@review.user), method: :get %>

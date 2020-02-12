@@ -20,9 +20,17 @@ class ReviewsController < ApplicationController
     end
 
     def edit
+        @hikes = Hike.all
     end
 
     def update
+        @review.update(review_params)
+        if @review.valid?
+            redirect_to review_path(@review)
+        else
+            flash[:errors] = @review.errors.full_messages
+            redirect_to edit_review_path
+        end
     end
 
     def destroy
