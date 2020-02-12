@@ -16,9 +16,17 @@
 </style>
 
 <h1> Locations in New York </h1>
+<nav>
+<%= button_to 'Home', '/', :method => "get" %><br>
+<%= button_to 'Show Users', users_path, :method => "get" %> <br>
+<%= button_to 'All Hikes', hikes_path, :method => "get" %>
+<hr>
+</nav
+
+<div><h2> List of All Hikes </h2></div>
 
 <ul>
     <% @hikes.each do |i| %>
-        <li><%= link_to i.location, hike_path(i) %></li>
+        <li><%= link_to i.name, hike_path(i) %></li>
     <% end %>
 </ul>

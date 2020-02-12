@@ -1,1 +1,27 @@
-<%= render "form" %>
+<div><h2> Edit Review </h2></div>
+
+<ul>
+<% if flash[:errors] %>
+    <div> List of Error(s) </div>
+    <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+    <br>
+<% end %>
+</ul>
+
+<%= form_for @review do |f| %>
+
+    <%= f.hidden_field :user_id %><br>
+    <%= f.label :hike_id %><br>
+    <%= f.collection_select :hike_id, @hikes, :id, :name %><br><br>
+    <%= f.label :rating %><br>
+    <%= f.number_field :rating %><br><br>
+    <%= f.label :description %><br>
+    <%= f.text_area :description, cols: 75, rows: 10 %><br><br>
+
+    <%= f.submit %>
+
+<% end %>
+
+<br><%= button_to 'Back', review_path(@review), method: :get %>

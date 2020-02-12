@@ -5,6 +5,7 @@
          text-align: center;
          font-size: 40px;
          margin-top: 65px;
+         text-color: 
     }
 
     ul {
@@ -17,10 +18,22 @@
         color: pink; 
     }
 
+    nav {
+        text-align: center;
+        opacity: 1.0;
     }
+
 </style>
 
 <h1>All Users</h1>
+<nav>
+<%= button_to 'Home', '/', :method => "get" %><br>
+<%= button_to 'Show Users', users_path, :method => "get" %> <br>
+<%= button_to 'All Hikes', hikes_path, :method => "get" %>
+<hr>
+</nav
+
+<div><h2> All Users </h2><div>
 
 <ul>
     <% @users.each do |i| %>

@@ -14,9 +14,8 @@ ActiveRecord::Schema.define(version: 2020_02_10_212355) do
 
   create_table "hikes", force: :cascade do |t|
     t.string "name"
-    t.string "location"
-    t.integer "distance"
-    t.integer "elevation"
+    t.float "distance"
+    t.float "elevation"
     t.string "difficulty"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
@@ -37,6 +36,8 @@ ActiveRecord::Schema.define(version: 2020_02_10_212355) do
     t.string "name"
     t.integer "age"
     t.string "bio"
+    t.string "username"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end

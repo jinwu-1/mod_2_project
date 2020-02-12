@@ -1,15 +1,54 @@
-<h1> <%= @user.name %>'s Profile </h1>
+<nav>
+<%= button_to 'Home', '/', :method => "get" %><br>
+<%= button_to 'Show Users', users_path, :method => "get" %> <br>
+<%= button_to 'All Hikes', hikes_path, :method => "get" %>
+<hr>
+</nav
+
+<div><h1> <%= @user.username %>'s Profile </h1></div>
 
 <ul>
-    <li>Age: <%= @user.age %> </li>
-    <li>Bio: <%= @user.bio %> </li>
+    <li>Name: <%= @user.name %></li><br>
+    <li>Age: <%= @user.age %> </li><br>
+    <li>Bio: <%= @user.bio %> </li><br>
 </ul>
+<hr>
 
-Reviews:
+<h3> Reviews: </h3>
 <ul>
     <% @user.reviews.each do |i| %>
         <li><%= link_to i.hike.name, review_path(i) %></li>
     <% end %>
 </ul>
+<hr>
 
+
+<ul>
+<% if flash[:errors] %>
+    <h3> List of Error(s) </h3>
+    <% flash[:errors].each do |error| %>
+        <li><%= error %></li>
+    <% end %>
+<% end %>
+</ul>
+
+<h3> Create a Review </h3>
+<%= form_for @review do |f| %>
+
+    <%= f.label :hike_id %>:<br>
+    <%= f.collection_select :hike_id, @hikes, :id, :name %><br><br>
+    <%= f.label :rating %>: (1 to 5) <br>
+    <%= f.number_field :rating %><br><br>
+    <%= f.label :description %>:<br>
+    <%= f.text_area :description, cols: 75, rows: 10 %><br><br>
+    <%= f.hidden_field :user_id %>
+    
+    <%= f.submit %>
+
+<% end %>
+
+<<<<<<< HEAD
 <%= button_to 'Create', new_review_path, method: "get" %>
+=======
+<br><%= button_to 'Back', users_path, method: :get %>   
+>>>>>>> 5387f5e1a0a0deb8ef40509a6212e2f5f8252cd7
