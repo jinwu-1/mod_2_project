@@ -1,7 +1,23 @@
-<div></div>
+<style>
 
-<h2> Create an Account! </h2>
+    h1 { 
+        font-family: 'Open Sans', sans-serif;
+         text-align: center;
+         font-size: 40px;
+         margin-top: 65px;
+    }
 
+    div {
+        font-family: 'Open Sans', sans-serif;
+         text-align: center;
+         font-size: 25px;
+    }
+
+</style>
+
+<h1> Create an Account! </h1>
+
+<div>
 <ul>
 <% if flash[:errors] %>
     <h3> List of Error(s) </h3>
@@ -22,10 +38,11 @@
     <%= f.label :age %>:<br>
     <%= f.number_field :age %><br><br>
     <%= f.label :bio %>:<br>
-    <%= f.text_area :bio, cols: 75, rows: 10 %><br><br>
+    <%= f.text_area :bio, cols: 45, rows: 5 %><br><br>
 
     <%= f.submit %>
 
 <% end %>
 
 <br><%= button_to 'Back', '/', method: :get %>
+</div>

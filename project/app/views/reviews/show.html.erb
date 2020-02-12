@@ -1,16 +1,34 @@
-<nav>
-<%= button_to 'Home', '/', :method => "get" %><br>
-<%= button_to 'Show Users', users_path, :method => "get" %> <br>
-<%= button_to 'All Hikes', hikes_path, :method => "get" %>
-<hr>
-</nav
+<style>
 
-<div><h2> Review for <%=link_to @review.hike.name, hike_path(@review.hike) %> </h2></div>
-<div><h3> By: <%=link_to @review.user.name, user_path(@review.user) %> </h3></div>
+    h1 { 
+        font-family: 'Open Sans', sans-serif;
+         text-align: center;
+         font-size: 40px;
+         margin-top: 65px;
+    }
+
+    div {
+        font-family: 'Open Sans', sans-serif;
+         text-align: center;
+         font-size: 25px;
+    }
+
+    #desc {
+        background-color: lightgrey;
+        width: 1000px;
+        border: 5px solid black;
+        padding: 50px;
+        margin: 10px;
+    }
+    
+
+</style>
+<div><h1> Review for <%=link_to @review.hike.name, hike_path(@review.hike) %> </h1></div>
+<div><h3> By: <%=link_to @review.user.name, user_path(@review.user) %> </h3></div><br>
 
 <div>
 Rating: <%= @review.rating %>/5<br><br>
-Description: <br><%= @review.description %><br><br>
+Description: <br><div id= "desc"><%= @review.description %></div><br><br>
 </div>
 
 <div>

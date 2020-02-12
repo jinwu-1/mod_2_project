@@ -1,12 +1,23 @@
-<nav>
-<%= button_to 'Home', '/', :method => "get" %><br>
-<%= button_to 'Show Users', users_path, :method => "get" %> <br>
-<%= button_to 'All Hikes', hikes_path, :method => "get" %>
-<hr>
-</nav
+<style>
 
-<div><h1> <%= @user.username %>'s Profile </h1></div>
+    h1 { 
+        font-family: 'Open Sans', sans-serif;
+         text-align: center;
+         font-size: 40px;
+         margin-top: 65px;
+    }
 
+    div {
+        font-family: 'Open Sans', sans-serif;
+         text-align: center;
+         font-size: 25px;
+    }
+
+</style>
+
+<h1> <%= @user.username %>'s Profile </h1>
+
+<div>
 <ul>
     <li>Name: <%= @user.name %></li><br>
     <li>Age: <%= @user.age %> </li><br>
@@ -48,3 +59,5 @@
 <% end %>
 
 <br><%= button_to 'Back', users_path, method: :get %>   
+
+</div>

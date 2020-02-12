@@ -1,14 +1,22 @@
-<nav>
-<%= button_to 'Home', '/', :method => "get" %><br>
-<%= button_to 'Show Users', users_path, :method => "get" %> <br>
-<%= button_to 'All Hikes', hikes_path, :method => "get" %>
-<hr>
-</nav
+<style>
 
-<div><h2> List of All Hikes </h2></div>
+    h1 { 
+        font-family: 'Open Sans', sans-serif;
+         text-align: center;
+         font-size: 40px;
+         margin-top: 65px;
+    }
 
-<ul>
-    <% @hikes.each do |i| %>
-        <li><%= link_to i.name, hike_path(i) %></li>
-    <% end %>
-</ul>
+    div {
+        font-family: 'Open Sans', sans-serif;
+         text-align: center;
+         font-size: 25px;  
+    }
+    
+</style>
+
+<h1> List of Hikes </h1>
+
+<% @hikes.each do |i| %>
+    <div><%= link_to i.name, hike_path(i) %></div>
+<% end %>
