@@ -16,31 +16,38 @@
 
 <hr>
 
+<% if session[:user_id] == @user.id %>
+    <h1> Create a Review </h1><hr>
 
-<h1> Create a Review </h1><hr>
+    <% if flash[:errors] %>
+        <h2> List of Error(s) </h2>
+        <% flash[:errors].each do |error| %>
+            <div id='box'><%= error %></div>
+        <% end %>
+        <hr>
+    <% end %>
 
-<% if flash[:errors] %>
-    <h2> List of Error(s) </h2>
-    <% flash[:errors].each do |error| %>
-        <div id='box'><%= error %></div>
+    <%= form_for @review do |f| %>
+
+        <%= f.label :hike_id %>:<br>
+        <%= f.collection_select :hike_id, @hikes, :id, :name %><br><br>
+        <%= f.label :rating %>: (1 to 5) <br>
+        <%= f.number_field :rating %><br><br>
+        <%= f.label :description %>:<br>
+        <%= f.text_area :description, cols: 40, rows: 5 %><br><br>
+        <%= f.hidden_field :user_id %>
+        
+        <%= f.submit %>
+
     <% end %>
     <hr>
 <% end %>
 
-<%= form_for @review do |f| %>
-
-    <%= f.label :hike_id %>:<br>
-    <%= f.collection_select :hike_id, @hikes, :id, :name %><br><br>
-    <%= f.label :rating %>: (1 to 5) <br>
-    <%= f.number_field :rating %><br><br>
-    <%= f.label :description %>:<br>
-    <%= f.text_area :description, cols: 40, rows: 5 %><br><br>
-    <%= f.hidden_field :user_id %>
-    
-    <%= f.submit %>
-
-<% end %>
-<hr>
 
 <br><%= button_to 'Back', users_path, method: :get %>
+
+<% if session[:user_id] == @review.user.id %>
+    <br><%= button_to 'Log Out', login_path, method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
 </div>

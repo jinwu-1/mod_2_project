@@ -1,5 +1,6 @@
 <div id='desc'>
-<h1> Review for <%=link_to @review.hike.name, hike_path(@review.hike) %> </h1><br>
+<h1> Review for <%=link_to @review.hike.name, hike_path(@review.hike) %> </h1>
+<hr>
 <h3> By: <%=link_to @review.user.name, user_path(@review.user) %> </h3><br>
 
 
@@ -7,7 +8,12 @@ Rating: <%= @review.rating %>/5<br><br>
 Description: <br><div id='box'><%= @review.description %></div>
 <hr>
 <br>
-<%= button_to 'Edit', edit_review_path, method: :get %>
-<%= button_to 'Delete', review_path(@review), method: :delete, data: { confirm: 'Are you sure?' } %>
+
+<% if session[:user_id] == @review.user.id %>
+    <%= button_to 'Edit', edit_review_path, method: :get %>
+    <%= button_to 'Delete', review_path(@review), method: :delete, data: { confirm: 'Are you sure?' } %>
+<% end %>
+
 <%= button_to 'Back', user_path(@review.user), method: :get %>
+
 </div>

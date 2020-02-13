@@ -1,9 +1,11 @@
 class ApplicationController < ActionController::Base
 
-    helper_method :current_user
+    def log_in_user(user_id)
+        session[:user_id] = user_id
+    end
 
-    def current_user
-        sesson[:current_username] = params[:username]
+    def log_out_user!
+        session.delete(:user_id)
     end
 
 end

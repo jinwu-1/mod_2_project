@@ -1,14 +1,24 @@
 <div id='desc'>
-<h1>Log In... I Guess??</h1>
+<h1>Errrrrr Log In</h1>
 <hr>
 
-<%= form_for users_path do |form| %>
-    
-    <%= form.label :username %>:<br>
-    <%= form.text_field :username %><br>
-    <%= form.label :password %>:<br>
-    <%= form.password_field :password %><br><br>
+<% if flash[:errors] %>
+    <h2> List of Error(s): </h2> 
+    <% flash[:errors].each do |error| %>
+        <div id='box'><%= error %></div>
+    <% end %>
+    <hr>
+<% end %>   
 
-    <%= form.submit 'Click Here To Break Everything' %>
-    
+<%= form_tag login_index_path, class: "auth-form" do %>
+
+    <%= label_tag :username %>:
+    <%= text_field_tag :username %>
+    <br>
+
+    <%= label_tag :password %>:
+    <%= password_field_tag :password %>
+    <br>
+
+    <%= submit_tag "Log in" %>
 <% end %>

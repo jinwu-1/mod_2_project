@@ -27,17 +27,17 @@
           <li class="nav-item">
             <%= link_to 'Home', '/', :method => "get", :class => "nav-link" %>
           </li>
+          <% if session[:user_id] %>
           <li class="nav-item">
-            <%= link_to User, users_path, :method => "get", :class => "nav-link" %> 
+            <%= link_to 'Profile', user_path(session[:user_id]), :method => "get", :class => "nav-link" %> 
+          </li>
+          <% end %>
+          <li class="nav-item">
+            <%= link_to 'All Users', users_path, :method => "get", :class => "nav-link" %> 
           </li>
           <li class="nav-item">
-            <%= link_to Hike, hikes_path, :method => "get", :class => "nav-link" %> 
+            <%= link_to 'Hikes', hikes_path, :method => "get", :class => "nav-link" %> 
           </li>
-          <%# <li class="nav-item">
-            <button, :class => "nav-link"> Contact </button>
-            <%# <a class="nav-link" href="#" :class => Contact> %>
-            <%# <button>Contact</button></a>  %>
-          <%# </li> %>
         </ul>
       </div>
 </nav>
