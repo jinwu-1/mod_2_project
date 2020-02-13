@@ -1,11 +1,13 @@
 <div id='desc'>
-<h1> Create an Account! </h1><br>
+<h1> Create an Account! </h1>
+<hr>
 
 <% if flash[:errors] %>
-    <h3> List of Error(s) </h3>
+    <h2> List of Error(s) </h2>
     <% flash[:errors].each do |error| %>
-        <%= error %>
+        <div id='box'><%= error %></div>
     <% end %>
+    <hr>
 <% end %>
 
 <%= form_for @user do |f| %>

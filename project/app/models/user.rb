@@ -6,8 +6,14 @@ class User < ApplicationRecord
     validates :username, uniqueness: true
     validates :username, length: { minimum: 4 }
     validates :password, length: { minimum: 4 }
-    validates :age, numericality: { greater_than: 0 }
+    validate :age_range
 
     has_secure_password
+
+    def age_range
+        if !age || (age < 1 || age > 150)
+          errors.add(:age, "need to be between 1-150")
+        end
+    end
 
 end
