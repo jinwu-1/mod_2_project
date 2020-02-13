@@ -1,14 +1,14 @@
 <div id='desc'>
-<h1>Log In</h1>
+<h1>Log In... I Guess??</h1>
+<hr>
 
-<%= form_for @login do |f| %>
+<%= form_for users_path do |form| %>
+    
+    <%= form.label :username %>:<br>
+    <%= form.text_field :username %><br>
+    <%= form.label :password %>:<br>
+    <%= form.password_field :password %><br><br>
 
-        <%= f.label :username %>
-        <%= f.text_field :username %>
-        <%= f.label :password%>
-        <%= f.password_field :password %>
-
-    <%= f.submit :'Log In'%>
-
+    <%= form.submit 'Click Here To Break Everything' %>
+    
 <% end %>
-</div>
