@@ -14,4 +14,29 @@
  *= require_self
  */
 
+ h1 { 
+    font-family: 'Open Sans', sans-serif;
+     text-align: center;
+     font-size: 40px;
+     margin-top: 65px;
+}
 
+div {
+    font-family: 'Open Sans', sans-serif;
+     text-align: center;
+     font-size: 25px;  
+}
+
+#desc {
+    background-color: rgba(211, 211, 211, 0.85);
+    width: 750px;
+    border: 5px solid black;
+    padding: 50px;
+    margin: 150 auto
+}
+
+#box {
+    font-family: 'Open Sans', sans-serif;
+     text-align: center;
+     font-size: 17px;  
+}

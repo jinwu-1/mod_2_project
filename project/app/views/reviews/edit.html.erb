@@ -1,37 +1,13 @@
-<style>
+<div id='desc'>
+<h1> Edit Review </h1>
+<hr>
 
-    h1 { 
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 40px;
-         margin-top: 65px;
-    }
-
-    div {
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 25px;
-    }
-
-    #desc {
-        background-color: lightgrey;
-        width: 1000px;
-        border: 5px solid black;
-        padding: 50px;
-        margin-right: 200px;
-        margin-left: 220px;
-    }
-
-</style>
-
-<div><h1> Edit Review </h1></div>
-
-<div>
 <% if flash[:errors] %>
-    <div> List of Error(s): </div>
+    <h2> List of Error(s): </h2> 
     <% flash[:errors].each do |error| %>
-        <div><%= error %></div>
+        <div id='box'><%= error %></div>
     <% end %>
+    <hr>
 <% end %>
 
 
@@ -43,11 +19,12 @@
     <%= f.label :rating %>: (1 to 5)<br>
     <%= f.number_field :rating %><br><br>
     <%= f.label :description %>:<br>
-    <%= f.text_area :description, cols: 50, rows: 5.5 %><br><br>
+    <%= f.text_area :description, cols: 40, rows: 5 %><br><br>
 
     <%= f.submit %>
 
 <% end %>
-
+<hr>
+<br>
 <%= button_to 'Back', review_path(@review), method: :get %>
 </div>

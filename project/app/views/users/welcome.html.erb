@@ -1,22 +1,9 @@
-<style>
+<div id='desc'>
 
-    h1 { 
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 40px;
-         margin-top: 65px;
-    }
+<h1>Hēłłõ Wôrłd!</h1>
 
-    div {
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 25px;
-    }
+<%= link_to 'Sign Up', new_user_path, method: :get %><br>
 
-</style>
+<%= link_to 'Login', new_login_path, method: :get %>
 
-<div><h1>Hēłłõ Wôrłd!</h1></div><br>
-
-<div><%= link_to 'Sign Up', new_user_path, method: :get %></div><br>
-
-<div><%= link_to 'Login', new_login_path, method: :get %></div>
+</div>

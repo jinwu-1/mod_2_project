@@ -1,49 +1,32 @@
-<style>
-
-    h1 { 
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 40px;
-         margin-top: 65px;
-    }
-
-    div {
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 25px;
-    }
-
-</style>
-
+<div id='desc'>
 <h1> <%= @user.username %>'s Profile </h1>
-
-<div>
-<div>
-    <div>Name: <%= @user.name %></div><br>
-    <div>Age: <%= @user.age %> </div><br>
-    <div>Bio: <%= @user.bio %> </div><br>
-</div>
 <hr>
 
-<h3> Reviews: </h3>
-<div>
+    Name: <%= @user.name %><br><br>
+    Age: <%= @user.age %><br><br>
+    Bio: <%= @user.bio %><br><br>
+
+<hr>
+
+<h1> Reviews: </h1>
+
     <% @user.reviews.each do |i| %>
-        <div><%= link_to i.hike.name, review_path(i) %></div>
+        <%= link_to i.hike.name, review_path(i) %><br>
     <% end %>
-</div>
+
 <hr>
 
 
-<div>
-<% if flash[:errors] %>
-    <h3> List of Error(s) </h3>
-    <% flash[:errors].each do |error| %>
-        <div><%= error %></div>
-    <% end %>
-<% end %>
-</div>
+<h1> Create a Review </h1><hr>
 
-<h3> Create a Review </h3>
+<% if flash[:errors] %>
+    <h2> List of Error(s) </h2>
+    <% flash[:errors].each do |error| %>
+        <div id='box'><%= error %></div>
+    <% end %>
+    <hr>
+<% end %>
+
 <%= form_for @review do |f| %>
 
     <%= f.label :hike_id %>:<br>
@@ -51,13 +34,13 @@
     <%= f.label :rating %>: (1 to 5) <br>
     <%= f.number_field :rating %><br><br>
     <%= f.label :description %>:<br>
-    <%= f.text_area :description, cols: 75, rows: 10 %><br><br>
+    <%= f.text_area :description, cols: 40, rows: 5 %><br><br>
     <%= f.hidden_field :user_id %>
     
     <%= f.submit %>
 
 <% end %>
+<hr>
 
-<br><%= button_to 'Back', users_path, method: :get %>   
-
+<br><%= button_to 'Back', users_path, method: :get %>
 </div>

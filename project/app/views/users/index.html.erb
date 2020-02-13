@@ -1,23 +1,8 @@
-<style>
-
-    h1 { 
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 40px;
-         margin-top: 65px;
-    }
-
-    div {
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 25px;
-    }
-
-</style>
-
+<div id='desc'>
 <h1>All Users</h1>
 
 <% @users.each do |i| %>
     <div><%= link_to i.name, user_path(i) %></div>
 <% end %>
+</div>
 

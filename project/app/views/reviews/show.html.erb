@@ -1,39 +1,12 @@
-<style>
+<div id='desc'>
+<h1> Review for <%=link_to @review.hike.name, hike_path(@review.hike) %> </h1><br>
+<h3> By: <%=link_to @review.user.name, user_path(@review.user) %> </h3><br>
 
-    h1 { 
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 40px;
-         margin-top: 65px;
-    }
 
-    div {
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 25px;
-    }
-
-    #desc {
-        background-color: lightgrey;
-        width: 1000px;
-        border: 5px solid black;
-        padding: 50px;
-        margin-right: 200px;
-        margin-left: 220px;
-    }
-    
-
-</style>
-<div><h1> Review for <%=link_to @review.hike.name, hike_path(@review.hike) %> </h1></div>
-<div><h3> By: <%=link_to @review.user.name, user_path(@review.user) %> </h3></div><br>
-
-<div>
 Rating: <%= @review.rating %>/5<br><br>
-Description: <br><div id= "desc"><%= @review.description %></div><br>
-</div>
-
-<div>
-
+Description: <br><div id='box'><%= @review.description %></div>
+<hr>
+<br>
 <%= button_to 'Edit', edit_review_path, method: :get %>
 <%= button_to 'Delete', review_path(@review), method: :delete, data: { confirm: 'Are you sure?' } %>
 <%= button_to 'Back', user_path(@review.user), method: :get %>

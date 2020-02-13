@@ -1,43 +1,19 @@
-<style>
+<div id='desc'>
+<h1> <%= @hike.name %> </h1>
 
-    h1 { 
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 40px;
-         margin-top: 65px;
-    }
-
-    div {
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 25px;
-    }
-
-    #desc {
-        background-color: lightgrey;
-        width: 1000px;
-        border: 5px solid black;
-        padding: 50px;
-        margin-right: 200px;
-        margin-left: 220px;
-    }
-
-</style>
-
-<div><h1> <%= @hike.name %> </h1></div>
-
-<div>
 Distance: <%= @hike.distance %> miles <br>
 Elevation: <%= @hike.elevation %> meters <br>
 Difficulty: <%= @hike.difficulty %> <br><br>
-</div>
+
 <hr>
 
-<div><h2> List of Reviews: <h2></div><br>
+<h1> List of Reviews </h1><hr>
 <% @hike.reviews.each do |review| %>
-    <div> Author: <%= link_to review.user.name, user_path(review.user) %> </div><br>
-    <div> Rating: <%= review.rating %>/5 </div><br>
-    <div> Description: </div><br><div id="desc"> <%= review.description %> </div><br>
+     Author: <%= link_to review.user.name, user_path(review.user) %> <br><br>
+     Rating: <%= review.rating %>/5 <br><br>
+     Description: <br><div id='box'><%= review.description %></div>
+     <hr>
 <% end %>
 
-<br><div><%= button_to 'Back', hikes_path, method: :get %></div>
+<br><%= button_to 'Back', hikes_path, method: :get %>
+</div>

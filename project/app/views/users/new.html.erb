@@ -1,31 +1,12 @@
-<style>
+<div id='desc'>
+<h1> Create an Account! </h1><br>
 
-    h1 { 
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 40px;
-         margin-top: 65px;
-    }
-
-    div {
-        font-family: 'Open Sans', sans-serif;
-         text-align: center;
-         font-size: 25px;
-    }
-
-</style>
-
-<h1> Create an Account! </h1>
-
-<div>
-<ul>
 <% if flash[:errors] %>
     <h3> List of Error(s) </h3>
     <% flash[:errors].each do |error| %>
-        <li><%= error %></li>
+        <%= error %>
     <% end %>
 <% end %>
-</ul>
 
 <%= form_for @user do |f| %>
 
@@ -44,5 +25,5 @@
 
 <% end %>
 
-<br><%= button_to 'Back', '/', method: :get %>
+<%= button_to 'Back', '/', method: :get %>
 </div>
