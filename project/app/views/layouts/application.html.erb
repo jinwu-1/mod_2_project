@@ -24,20 +24,20 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNav">
         <ul class="navbar-nav">
+        <% if session[:user_id] %>
           <li class="nav-item">
             <%= link_to 'Home', '/', :method => "get", :class => "nav-link" %>
           </li>
-          <% if session[:user_id] %>
           <li class="nav-item">
             <%= link_to 'Profile', user_path(session[:user_id]), :method => "get", :class => "nav-link" %> 
           </li>
+          <li class="nav-item">
+          <%= link_to 'All Users', users_path, :method => "get", :class => "nav-link" %> 
+          </li>
+          <li class="nav-item">
+          <%= link_to 'Hikes', hikes_path, :method => "get", :class => "nav-link" %> 
+          </li>
           <% end %>
-          <li class="nav-item">
-            <%= link_to 'All Users', users_path, :method => "get", :class => "nav-link" %> 
-          </li>
-          <li class="nav-item">
-            <%= link_to 'Hikes', hikes_path, :method => "get", :class => "nav-link" %> 
-          </li>
         </ul>
       </div>
 </nav>
