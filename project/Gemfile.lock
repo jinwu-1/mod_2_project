@@ -67,6 +67,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.13)
+    bcrypt (3.1.13-java)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -126,9 +127,9 @@ GEM
     nokogiri (1.10.8-x86-mingw32)
       mini_portile2 (~> 2.4.0)
     public_suffix (4.0.3)
-    puma (4.3.1)
+    puma (4.3.5)
       nio4r (~> 2.0)
-    puma (4.3.1-java)
+    puma (4.3.5-java)
       nio4r (~> 2.0)
     rack (2.2.1)
     rack-proxy (0.6.5)
@@ -245,7 +246,7 @@ DEPENDENCIES
   faker!
   jbuilder (~> 2.7)
   listen (>= 3.0.5, < 3.2)
-  puma (~> 4.1)
+  puma (~> 4.3)
   rails (~> 6.0.2, >= 6.0.2.1)
   sass-rails (>= 6)
   selenium-webdriver
