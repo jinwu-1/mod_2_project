@@ -67,6 +67,7 @@ GEM
     addressable (2.7.0)
       public_suffix (>= 2.0.2, < 5.0)
     bcrypt (3.1.13)
+    bcrypt (3.1.13-java)
     bindex (0.8.1)
     bootsnap (1.4.5)
       msgpack (~> 1.0)
@@ -130,7 +131,7 @@ GEM
       nio4r (~> 2.0)
     puma (4.3.1-java)
       nio4r (~> 2.0)
-    rack (2.2.1)
+    rack (2.2.3)
     rack-proxy (0.6.5)
       rack
     rack-test (1.1.0)
